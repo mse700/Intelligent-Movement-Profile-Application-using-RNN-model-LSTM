@@ -1,0 +1,102 @@
+<MainScreen>:
+    chkinstat:checkin
+    chkoutstat:checkout
+    notstat:pause
+    rmstat:rme
+    txt:test_label
+
+    BoxLayout:
+        orientation:"horizontal"
+
+        BoxLayout:
+            orientation:"vertical"
+            height:20
+
+            Button:
+                id:checkin
+                text: 'Check in'
+                on_press:
+                    root.chkstat()
+
+
+                background_color: 0.2, 1, 0.6, 1
+            Button:
+                id:checkout
+                text: 'Check out'
+                background_color: 1, 0.5, 0.6, 1
+                disabled: False
+                on_press:
+                    root.check_out()
+            Button:
+                id:pause
+                text: 'Pause Notification'
+                disabled:True
+
+            Button:
+                id:rme
+                text: 'Remind me'
+                disabled: True
+            Button:
+                text: 'Setting'
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.transition.duration = 1
+                    root.manager.current = 'settings'
+            Label:
+                id:test_label
+
+
+
+
+        TabbedPanel:
+
+            do_default_tab: False
+
+
+            TabbedPanelItem:
+                text: "Daily"
+
+
+            TabbedPanelItem:
+                text: "Weekly"
+
+            TabbedPanelItem:
+                text: "Monthly"
+
+<SettingScreen>:
+    BoxLayout:
+        orientation:"vertical"
+        Button:
+            text: 'Back to Menu'
+            size_hint:.15,.15
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.transition.duration = 1
+                root.manager.current = 'main'
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                text:'Name'
+            Label:
+                text:'Age'
+            Label:
+                text:'Height'
+            Label:
+                text:'Weight'
+            Label:
+                text:'Job Position'
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                text:"Number of Notification per Hour "
+            BoxLayout:
+                orientation:"vertical"
+
+                Slider:
+                    id: slider_id
+                    min: 1
+                    max: 8
+                    value: 1
+                    step: 2
+                Label:
+                    text:str(slider_id.value)
