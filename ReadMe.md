@@ -7,7 +7,7 @@ The Project is stemed from a case study with a list of requirements to be fullfi
 
 A Recurrent Neural Network model needs to be trained in order classify the input data (from Accelerometersensor) in to Sitting-Running-Sitting classes. The target framework can be either android or ios based on the user customization.
 
-## Requirements
+## Porject Requirements
 
 Following requirements need to be met:
 - The development Language must be Python
