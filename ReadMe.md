@@ -12,10 +12,10 @@ A Recurrent Neural Network model needs to be trained in order classify the input
 Following requirements need to be met:
 - The development Language must be Python
 - Application Graphical Framework > Kivy, Kivy MD
-- The settings must contain  personal data: name, age/ birth date, weight, height, job position, movement profile. The user needs to add them.
+- The settings must contain  personal data: name, age/ birth date, weight, height, job position, movement profile. The user needs to add them by first login.
 - As the app user has to add personal data, only he/she should be able to read and write them. So, at app start, the user must unlock the access to his/her data. This is done by using FaceID, Touch ID or a simple passcode.
 - The stored settings must be encrypted by using RSA or Fernet and are just readable by the application.
-- The motivational task manager should use an own database (table) to select motivation tasks according to job type, gender, age and the  actual movement profile. The database can be a separate file, which is read by the application.
+- The motivational task manager should use an own database (table) to select motivation tasks according to job type, gender, age and the actual movement profile. The database can be a separate file, which is read by the application.
 
 
 <p align="center">
@@ -33,6 +33,9 @@ Following requirements need to be met:
 - ``buildozer.spec`` is the generated specification file which bundles the app meta data in apk or ios frameework. It is recommended to install buildozer in order to handle the app generation task. More information about buildozer can be found [here](https://buildozer.readthedocs.io/en/latest/).
 - ``Final_Model_liteV01.tflite`` is the trained LSTM model at the heart of the app, used for movement profile prediction.
 - ``Time_Module.py`` contains time functions needed for reports.
+
+## How to run/customize the App
+
 
 
 
