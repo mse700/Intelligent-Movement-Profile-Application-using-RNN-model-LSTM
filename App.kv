@@ -1,0 +1,151 @@
+WindowManager:
+    FirstScreen
+    MainScreen:
+
+<FirstScreen>:
+    MDLabel:
+        id:welcome_label
+        text:"Movement App"
+        font_size:35
+        halign:'center'
+        pos_hint:{"center_x":0.5,"center_y":0.6}
+        size_hint_y:None
+        height:self.texture_size[1]
+        padding_y:15
+    MDTextFieldRound:
+        id:passw
+        hint_text:"password"
+        icon_right:"eye-off"
+        size_hint_x:None
+        width:200
+        font_size:18
+        pos_hint:{"center_x":0.5,"center_y":0.5}
+        password:True
+    Button:
+        id:enter
+        text:'Enter'
+        background_color:(0,250,0,0)
+        size_hint:(0.3,0.1)
+        pos_hint:{"center_x":0.5,"center_y":0.3}
+        on_press:
+            root.check_password()
+    Label:
+        id:pass_message
+        pos_hint:{"center_x":0.5,"center_y":0.45}
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+        color:(1,0,0,1)
+    BoxLayout:
+        orientation:'horizontal'
+        Label:
+            size_hint:0.7,1
+            id:sensor_authorization
+            pos_hint:{"center_x":0.5,"center_y":0.4}
+        CheckBox:
+            id:checkbox
+            size_hint:0.3,1
+            pos_hint:{"center_x":0.5,"center_y":0.4}
+            disabled:True
+            text:'Yes'
+            on_active:root.checkbox(self,self.active)
+<MainScreen>:
+    name:'main'
+    chkinstat:checkin
+    chkoutstat:checkout
+    notstat:pause
+    rmstat:rme
+    txt:test_label
+
+    BoxLayout:
+        orientation:"vertical"
+        size_hint: 1,0.95
+        pos_hint:{"top":1}
+        BoxLayout:
+            orientation:"horizontal"
+            BoxLayout:
+                orientation:"vertical"
+                height:20
+                size_hint: 0.3,1
+                Spinner:
+                    id:spinner_id
+                    text:"Excercise Plan"
+                    values:["60 Min Daily Walk","30 Min Daily Run","4 Hours Weekly Walk","1 Hours Weekly Run"]
+                    background_color: 0.2, 0.5, 0.6, 1
+                    on_text:root.spinner_clicked(self.text)
+                Button:
+                    id:checkin
+                    text: 'Check in'
+                    on_press:
+                        root.check_in()
+
+
+                    background_color: 0.2, 1, 0.6, 1
+                Button:
+                    id:checkout
+                    text: 'Check out'
+                    background_color: 1, 0.5, 0.6, 1
+                    disabled: True
+                    on_press:root.check_out()
+
+                Button:
+                    id:pause
+                    text: 'Pause Notification'
+                    disabled:False
+                    on_press:app.start_stop_notification()
+
+                Button:
+                    id:rme
+                    text: 'Remind me'
+                    disabled: False
+                    on_press:root.remind_me()
+
+                Button:
+                    id:goto
+                    text: 'Setting'
+                    disabled: False
+                    on_release: app.open_settings()
+
+
+
+
+
+            BoxLayout:
+                orientation:'vertical'
+                BoxLayout:
+                    size_hint: 1,0.2
+                    orientation:'horizontal'
+                    Button:
+                        id:day
+                        text: 'Daily Report'
+                        disabled: False
+                        on_press:
+                            root.daily_results()
+                    Button:
+                        id:week
+                        text: 'Weekly Report'
+                        disabled: False
+                        on_press:
+                            root.weekly_results()
+                    Button:
+                        id:month
+                        text: 'Monthly Report'
+                        disabled: False
+                        on_press:
+                            root.monthly_results()
+
+                BoxLayout:
+                    id:mat
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint:1,0.05
+            Label:
+                size_hint:0.9,1
+                id:hint
+            Label:
+                size_hint:0.1,1
+                id:test_label
+
+
+
+
