@@ -1,0 +1,9 @@
+kivy
+kivymd
+sqlite3
+plyer 
+numpy 
+tensorflow 
+matplotlib
+cryptography
+

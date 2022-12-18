@@ -18,15 +18,7 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.screenmanager import Screen
-from kivy.uix.tabbedpanel import TabbedPanel
-from kivy.uix.boxlayout import BoxLayout
-from kivy.properties import ObjectProperty,NumericProperty
 from MovementSimulator import MPSimulator
-from kivy.core.window import Window
-from kivy.uix.popup import Popup
-# from os.path import join
-from kivymd.uix.behaviors import RoundedRectangularElevationBehavior
-from kivymd.uix.card import MDCard
 import time
 from Query import data_query,pred,pred2
 from plyer import accelerometer
@@ -36,20 +28,13 @@ from tensorflow import lite
 import random
 from Time_Module import *
 from kivy.garden.matplotlib.backend_kivyagg import FigureCanvasKivyAgg
-from kivy.properties import StringProperty
 import matplotlib.pyplot as plt
-from kivy.uix.popup import Popup
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.widget import Widget
-from kivy.uix.settings import SettingsWithSidebar
 from setting import settings_json
-from kivy.config import Config
 from kivy.storage.jsonstore import JsonStore
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.backends import default_backend
-import ast
 
 
 class FirstScreen(Screen):

@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Moghimi Application
+title = Movement Application
 
 # (str) Package name
-package.name = myapp
+package.name = App
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test

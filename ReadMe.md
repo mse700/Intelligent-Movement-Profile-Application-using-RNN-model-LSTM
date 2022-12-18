@@ -2,10 +2,10 @@
 
 ## Problem Statement
 
-The Project is stemed from a case study with a list of requirements to be fullfilled. it is aimed to develope a mobile application beiong capable of recording the human activity based on accelerometer sensor. 
+The Project is stemed from a case study with a list of requirements to be fullfilled. It is aimed to develope a mobile application being capable of recording the human activity based on accelerometer sensor. 
 
 
-A Recurrent Neural Network model needs to be trained in order classify the input data (from Accelerometersensor) in to Sitting-Running-Sitting classes. The target framework can be either android or ios based on the user customization.
+A Recurrent Neural Network model needs to be trained in order classify the input data (from Accelerometersensor) in to Sitting-Running-Sitting classes. The target framework can be either Android or IOS based on the user customization.
 
 ## Porject Requirements
 
@@ -35,6 +35,38 @@ Following requirements need to be met:
 - ``Time_Module.py`` contains time functions needed for reports.
 
 ## How to run/customize the App
+
+Install the required packages (More instructions can be found [here](https://buildozer.readthedocs.io/en/latest/installation.html))
+
+```console
+pip install -r requirements.txt
+```
+Install the buildozer 
+
+```console
+sudo apt update
+sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+pip3 install --user --upgrade Cython==0.29.19 virtualenv  # the --user should be removed if you do this in a venv
+
+# add the following line at the end of your ~/.bashrc file
+export PATH=$PATH:~/.local/bin/
+```
+
+After installation, initialize the buildozer to get a ```builozer.spec``` file. (However, the spec file is provided in the repo and can be editted)
+
+```console
+buildozer init
+```
+
+Following settings must be modified in spec file:
+
+```console
+source.include_exts = py,png,jpg,kv,atlas,tflite,db,xls,db,ext,json
+requirements = python3,kivy,tensorflow,sqlite3,numpy,plyer,pandas,scikit-learn,datetime,xlrd,kivymd,cryptography,seaborn,xlrd,setuptools,rsa,scipy
+requirements.source.kivy = ../../kivy
+```
+
+There is ```android specific``` and ```ios specific``` in the ```buildozer.spec```, where one can set the required settings.(The provided spec file in the repo is set for android)
 
 
 
